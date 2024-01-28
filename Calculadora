@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="style.css">
+
+    <title>Calculadora Penal - DIRUA</title>
+    <link rel="icon" type="image/x-icon" href="europa-logo.png">
+    <script src="script.js"></script>
+</head>    
+ 
+<body>
+	<div class="center">CALCULADORA PENAL - DIRUA</div>
+	<div class="fc quadrotopo form-control">
+		<div style="margin: auto;width: 30%;flex: 0 0 auto;">
+			<h3>Nome do Preso</h3>
+			<input type="text" placeholder="NOME DO PRESO" id="preso_nome" name="preso_nome" class="inputnumber form-control" size="8" style="margin-right:10px">
+		</div>
+		
+		<div style="margin: auto;width: 30%;flex: 0 0 auto;">
+			<h3>RG do Preso</h3>
+			<input type="text" placeholder="RG DO PRESO" id="preso_rg" name="preso_rg" class="inputnumber form-control" size="8" data-only-numbers="true" style="margin-right:10px">
+		</div>
+					
+		<div style="margin: auto;width: 30%;flex: 0 0 auto;">
+			<h3>RG do Advogado</h3>
+			<input type="text" placeholder="RG DO ADVOGADO" id="adv_rg" name="adv_rg" class="inputnumber form-control" size="8" data-only-numbers="true" style="margin-right:10px">
+		</div>
+	</div>
+
+	<div id="1" class="fc quadro form-control">
+		<h3><FONT COLOR="#022d42">INFRAÇÕES:</FONT></h3>
+		<div class="col col-md-12">
+			<input id="Art. 1 - Danificar viatura" type="checkbox" class="form-check-input" name="crime" value="0|9000|NA" onclick="calcular()">
+			<label class="form-check-label" for="Art. 1 - Danificar viatura">Art. 1 - Danificar viatura</label>
+		</div>
+		<div class="col col-md-12">
+			<input id="Art. 2 - Direção perigosa" type="checkbox" class="form-check-input" name="crime" value="0|4000|NA" onclick="calcular()">
+			<label class="form-check-label" for="Art. 5.1 - Tentativa de Homicídio a Polícia">Art. 2 - Direção perigosa</label>
+		</div>
+		<div class="col col-md-12">
+			<input id="Art. 3 - Estacionamento irregular" type="checkbox" class="form-check-input" name="crime" value="0|3500|2500" onclick="calcular()">
+			<label class="form-check-label" for="Art. 6 - Homicídio Culposo">Art. 3 - Estacionamento irregular</label>
+		</div>
+		<div class="col col-md-12">
+			<input id="Art. 4 - Abandono de veículo" type="checkbox" class="form-check-input" name="crime" value="0|3500|2500" onclick="calcular()">
+			<label class="form-check-label" for="Art. 6.1 - Homicídio Culposo a Polícia">Art. 4 - Abandono de veículo</label>
+		</div>
+
+
+		<hr>
+	
+		<h3><FONT COLOR="#022d42">CRIMES DE BAIXA E MÉDIA COMPLEXIDADE:</FONT></h3>
+
+		<div class="col col-md-12">
+			<input id="Art. 5 - Caça ilegal" type="checkbox" class="form-check-input" name="crime" value="0|5000|NA" onclick="calcular()">
+			<label class="form-check-label" for="Art. 5 - Caça ilegal">Art. 5 - Caça ilegal</label>
+		</div>
+		<div class="col col-md-12">
+			<input id="Art. 6 - Tráfico de drogas" type="checkbox" class="form-check-input" name="crime" value="20|0|NA" onclick="calcular()">
+			<label class="form-check-label" for="Art. 6 - Tráfico de drogas">Art. 6 - Tráfico de drogas</label>
+		</div>
+		<div class="col col-md-12">
+			<input id="Art. 7 - Tentativa de suborno" type="checkbox" class="form-check-input" name="crime" value="20|6000|5000" onclick="calcular()">
+			<label class="form-check-label" for="Art. 7 - Tentativa de suborno">Art. 7 - Tentativa de suborno</label>
+		</div>
+		<div class="col col-md-12">
+			<input id="Art. 8 - Posse ilegal de armas classe 1" type="checkbox" class="form-check-input" name="crime" value="30|6000|10000" onclick="calcular()">
+			<label class="form-check-label" for="Art. 8 - Posse ilegal de armas classe 1">Art. 8 - Posse ilegal de armas classe 1</label>
+		</div>
+		<div class="col col-md-12">
+			<input id="Art. 9 - Lesão corporal" type="checkbox" class="form-check-input" name="crime" value="0|6000|40000" onclick="calcular()">
+			<label class="form-check-label" for="Art. 9 - Lesão corporal">Art. 9 - Lesão corporal</label>
+		</div>
+		<div class="col col-md-12">
+			<input id="Art. 10 - Invasão de propriedade pública" type="checkbox" class="form-check-input" name="crime" value="25|10000|40000" onclick="calcular()">
+			<label class="form-check-label" for="Art. 10 - Invasão de propriedade pública">Art. 10 - Invasão de propriedade pública</label>
+		</div>
+        <div class="col col-md-12">
+			<input id="Art. 11 - Invasão de propriedade particular" type="checkbox" class="form-check-input" name="crime" value="15|3500|40000" onclick="calcular()">
+			<label class="form-check-label" for="Art. 11 - Invasão de propriedade particular">Art. 11 - Invasão de propriedade particular</label>
+		</div>
+        <div class="col col-md-12">
+			<input id="Art. 12 - Furto" type="checkbox" class="form-check-input" name="crime" value="40|5000|40000" onclick="calcular()">
+			<label class="form-check-label" for="Art. 12 - Furto">Art. 12 - Furto</label>
+		</div>
+        <div class="col col-md-12">
+			<input id="Art. 13 - Falso testemunho" type="checkbox" class="form-check-input" name="crime" value="0|12000|40000" onclick="calcular()">
+			<label class="form-check-label" for="Art. 13 - Falso testemunho">Art. 13 - Falso testemunho</label>
+		</div>
+        <div class="col col-md-12">
+			<input id="Art. 14 - Falsidade ideológica" type="checkbox" class="form-check-input" name="crime" value="25|15000|40000" onclick="calcular()">
+			<label class="form-check-label" for="Art. 14 - Falsidade ideológica">Art. 14 - Falsidade ideológica</label>
+		</div>
+        <div class="col col-md-12">
+			<input id="Art. 15 - Dinheiro sujo" type="checkbox" class="form-check-input" name="crime" value="0|5000|40000" onclick="calcular()">
+			<label class="form-check-label" for="Art. 15 - Dinheiro sujo">Art. 15 - Dinheiro sujo</label>
+		</div>
